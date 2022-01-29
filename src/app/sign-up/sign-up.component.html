@@ -1,0 +1,30 @@
+<div class="modal-dialog login animated fadeInLeft">
+  <div class="main-section">
+    <div class="border-0 modal-content">
+      <div class="col-12 user-img text-center">
+        <img
+          src="https://ianars.github.io/Pok-dex/images/pokedeex.png"
+          alt="Hiberus" />
+      </div>
+
+      <form [formGroup]="formGroup" (ngSubmit)="signUp()">
+        <app-input [inputModel]="nameInputModel" class="row" ngDefaultControl></app-input>
+        <app-input [inputModel]="typeInputModel" class="row" ngDefaultControl></app-input>
+        <app-input [inputModel]="abilityInputModel" class="row" ngDefaultControl></app-input>
+        <app-input [inputModel]="speedInputModel" class="row" ngDefaultControl></app-input>
+        <app-input [inputModel]="weightInputModel" class="row" ngDefaultControl></app-input>
+        <app-input [inputModel]="heightInputModel" class="row" ngDefaultControl></app-input>
+        <app-input [inputModel]="descriptionInputModel" class="row" ngDefaultControl></app-input>
+        <app-input [inputModel]="emailInputModel" class="row" ngDefaultControl></app-input>
+        <app-input [inputModel]="passwordInputModel" class="row" ngDefaultControl></app-input>
+
+        <div class="example-button-row">
+          <a mat-button (click)="goLogin()" target="_blank"> ¿Ya tienes una cuenta? / Ingresar </a>
+        </div>
+
+
+        <app-button text="{{ 'button.sign_up' | translate }}" [form]="formGroup" type="submit" class="row"></app-button>
+      </form>
+    </div>
+  </div>
+</div>

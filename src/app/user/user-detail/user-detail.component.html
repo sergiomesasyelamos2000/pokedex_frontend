@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div class="m-5">
+  <h1><small>Datos sobre el pokemon</small></h1>
+  <hr />
+  <div class="d-grid gap-2 d-md-block">
+    <button (click)="goUserList()" class="btn btn-danger">
+      <i class="fa fa-arrow-left"></i>Regresar
+    </button>
+  </div>
+  <div class="modal-dialog login animated fadeInLeft">
+    <div class="main-section">
+      <div class="border-0 modal-content">
+        <form [formGroup]="formGroup" (ngSubmit)="updateUser()">
+          <app-input *ngIf="nameInputModel" [inputModel]="nameInputModel" class="row" ngDefaultControl></app-input>
+          <app-input *ngIf="typeInputModel" [inputModel]="typeInputModel" class="row" ngDefaultControl></app-input>
+          <app-input *ngIf="abilityInputModel" [inputModel]="abilityInputModel" class="row" ngDefaultControl></app-input>
+        <app-input *ngIf="speedInputModel" [inputModel]="speedInputModel" class="row" ngDefaultControl></app-input>
+        <app-input *ngIf="weightInputModel" [inputModel]="weightInputModel" class="row" ngDefaultControl></app-input>
+        <app-input *ngIf="heightInputModel" [inputModel]="heightInputModel" class="row" ngDefaultControl></app-input>
+        <app-input *ngIf="descriptionInputModel" [inputModel]="descriptionInputModel" class="row" ngDefaultControl></app-input>
+        <app-input *ngIf="imgInputModel" [inputModel]="imgInputModel" class="row" ngDefaultControl></app-input>
+          <!-- <app-input *ngIf="emailInputModel" [inputModel]="emailInputModel" class="row" ngDefaultControl></app-input>
+          <app-input *ngIf="passwordInputModel" [inputModel]="passwordInputModel" class="row" ngDefaultControl>
+          </app-input> -->
+          <app-button text="{{ 'button.update_user' | translate }}" [form]="formGroup" type="submit" class="row">
+          </app-button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

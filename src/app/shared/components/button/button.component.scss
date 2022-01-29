@@ -1,0 +1,21 @@
+@import "../../../../colors.scss";
+
+::ng-deep {
+  .mat-stroked-button {
+    border: none !important;
+  }
+}
+
+button {
+  background-color: $color-red !important;
+  border: 0.2rem solid $color-red !important;
+  color: $color-white !important;
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
+
+.mat-button-disabled {
+  background-color: $color-red !important;
+  color: $color-white !important;
+  border-color: $color-red !important;
+}

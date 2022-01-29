@@ -1,0 +1,70 @@
+{
+  "button": {
+    "login": "Iniciar sesión",
+    "sign_up": "Registrarse",
+    "go_to_login": "Volver a Iniciar sesión",
+    "update_user": "Actualizar usuario"
+  },
+  "error": {
+    "database": {
+      "generic": "Error al realizar la acción {{action}} para {{type}}",
+      "propertie": "Error al realizar la acción {{action}} para {{type}} con {{propertie_name}} {{propertie_value}}",
+      "type": {
+        "user": "USER"
+      },
+      "action": {
+        "create": "CREATE",
+        "delete": "DELETE",
+        "get": "GET",
+        "update": "UPDATE"
+      }
+    },
+    "login": {
+      "generic": "Error al intentar iniciar sesión"
+    }
+  },
+  "input": {
+    "label": {
+      "email": "Correo eléctronico",
+      "password": "Contraseña",
+      "name": "Nombre",
+      "type": "Tipo",
+      "ability": "Habilidad",
+      "speed": "Velocidad",
+      "weight": "Peso",
+      "height": "Altura",
+      "description": "Descripción",
+      "img": "Enlace avatar pokemon"
+    },
+    "placeholder": {
+      "email": "Introduce tu correo eléctronico",
+      "password": "Introduce tu contraseña",
+      "name": "Introduce el nombre del pokemon",
+      "type": "Introduce el tipo del pokemon",
+      "ability": "Introduce la habilidad del pokemon",
+      "speed": "Introduce la velocidad del pokemon",
+      "weight": "Introduce el peso del pokemon",
+      "height": "Introduce la altura del pokemon",
+      "description": "Introduce una descripción del pokemon",
+      "img": "Introduce el link de la imagen del pokemon"
+    }
+  },
+  "page_not_found": {
+    "title": "Página no encontrada 404"
+  },
+  "logout": {
+    "title": "Has cerrado sesión o ha caducado"
+  },
+  "success": {
+    "database": {
+      "generic": {
+        "user": "El usuario ha sido {{action}} con éxito"
+      },
+      "action": {
+        "created": "creado",
+        "delete": "eliminado",
+        "update": "actulizado"
+      }
+    }
+  }
+}

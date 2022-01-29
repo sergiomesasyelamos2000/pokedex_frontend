@@ -1,0 +1,39 @@
+@import "../../../../colors.scss";
+
+mat-label {
+  color: $color-dark-gray;
+}
+
+mat-form-field {
+  background-color: $color-white;
+  border: 0.1rem solid black;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+mat-form-field.mat-form-field-invalid {
+  border-color: $color-red;
+  background-color: $color-red;
+
+  mat-label {
+    color: $color-white;
+  }
+
+  input {
+    color: $color-white;
+  }
+}
+
+::ng-deep {
+  .mat-form-field-wrapper {
+    padding: 0 !important;
+  }
+
+  .mat-form-field-underline {
+    width: 0% !important;
+  }
+
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: transparent;
+  }
+}

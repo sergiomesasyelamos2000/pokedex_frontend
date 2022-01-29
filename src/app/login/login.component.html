@@ -1,0 +1,21 @@
+<div class="modal-dialog login animated fadeInLeft">
+  <div class="main-section">
+    <div class="border-0 modal-content">
+      <div class="col-12 user-img text-center">
+        <img
+          src="https://ianars.github.io/Pok-dex/images/pokedeex.png"
+          alt="Pokedex" />
+      </div>
+
+      <form [formGroup]="formGroup" (ngSubmit)="login()">
+        <app-input [inputModel]="emailInputModel" class="row" ngDefaultControl></app-input>
+        <app-input [inputModel]="passwordInputModel" class="row" ngDefaultControl></app-input>
+
+        <div class="example-button-row">
+          <a mat-button (click)="goSignUp()" target="_blank"> ¿No tienes cuenta? </a>
+        </div>
+        <app-button text="{{ 'button.login' | translate }}" [form]="formGroup" type="submit" class="row"></app-button>
+      </form>
+    </div>
+  </div>
+</div>

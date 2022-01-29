@@ -1,0 +1,5 @@
+<mat-form-field appearance="fill" *ngIf="inputModel.formControl">
+  <mat-label>{{ inputModel.label | translate }}</mat-label>
+  <input matInput [type]="inputModel.type" [placeholder]="inputModel.placeholder | translate"
+    [formControl]="inputModel.formControl" />
+</mat-form-field>

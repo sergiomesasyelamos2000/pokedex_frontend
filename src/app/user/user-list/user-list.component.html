@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+<div>
+  <div class="m-5">
+    <h1>Listado de Pokemons</h1>
+    <hr>
+
+    <div class="table-responsive">
+      <table class="table mt-3 fadeIn faster">
+        <thead class="table-dark">
+          <tr>
+            <!-- <th scope="col">ID</th> -->
+            <th scope="col">Imagen</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Habilidad</th>
+            <th scope="col">Velocidad</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Altura</th>
+            <th scope="col">Descripcion</th>
+            <!-- <th scope="col">Email</th> -->
+            <th scope="col">Herramientas</th>
+          </tr>
+        </thead>
+        <tbody text-align="center">
+          <tr *ngFor="let user of usersList; let i = index">
+            <!-- <th scope="row">{{i + 1}}</th> -->
+            <!-- <td>{{ user?.img }}</td> -->
+            <td>
+              <img class="img-pokemon" src = "{{user?.img}}" alt="{{user?.name}}">
+            </td>
+            <td>{{ user?.name }}</td>
+            <td>{{ user?.type }}</td>
+            <td>{{ user?.ability }}</td>
+            <td>{{ user?.speed }}</td>
+            <td>{{ user?.weight }}</td>
+            <td>{{ user?.height }}</td>
+            <td>{{ user?.description }}</td>
+            <!-- <td>{{ user?.email }}</td> -->
+            <td>
+              <app-user-row [user]="user" (showEmmiter)="showUserDetail($event)" (deleteEmmiter)="deleteUser($event)">
+              </app-user-row>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

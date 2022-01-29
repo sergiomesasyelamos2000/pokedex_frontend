@@ -1,0 +1,74 @@
+@import "src/colors.scss";
+
+body {
+  background-repeat: no repeat;
+  background-size: cover;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.fa-pen,
+.fa-sign-out-alt {
+  color: white;
+}
+
+.icono i {
+  font-size: 25px;
+}
+
+// Form styles for Login and Logout
+
+.main-section {
+  margin-top: 10%;
+  border-radius: 5px;
+}
+
+.modal-content {
+  height: 100%;
+  opacity: 0.95;
+  padding: 0 20px;
+}
+
+.user-img {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.user-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: #3754a2;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+  text-align: left;
+  color: $color-blue;
+}
+
+.mat-button-base {
+  margin-top: 9px;
+  padding-left: 1px;
+}
+
+/* SNACKBAR */
+.warning-snackbar {
+  background: $color-yellow;
+  color: $color-white;
+}
+.success-snackbar {
+  background: $color-green;
+  color: $color-white;
+}
+.error-snackbar {
+  background: $color-red;
+  color: $color-white;
+}
