@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
 
-It's a pokedex app on you can **pokedex**, **ViewPokemon**, **List** and **Delete** pokemons.
+It's a pokedex app on you can **View**, **List** and **Delete** pokemons.
 
 ## Development server
 
