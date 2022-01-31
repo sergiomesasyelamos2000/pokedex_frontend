@@ -1,3 +1,33 @@
 .btn{
     border-radius: 1rem;
 }
+.pokemonId{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.h1{
+  font-family: "Palatino";
+}
+.data small{
+  font-weight: normal;
+}
+.img-fluid{
+  margin-left: 15%
+}
+@media screen and (max-width: 400px){
+  .data{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    display: inline-block;
+  }
+  .info{
+    padding-left: 5%;
+  }
+  .link{
+    text-align: center;
+  }
+  
+}

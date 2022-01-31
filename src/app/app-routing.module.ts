@@ -9,6 +9,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserListComponent } from './user/user-list/user-list.component';
+import { ViewUserComponent } from './user/view-user/view-user.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
     path: environment.url.components.users_details,
     component: UserDetailComponent,
     canLoad: [AuthGuard],
+  },
+  {
+    path: environment.url.components.viewUser,
+    component: ViewUserComponent
   },
   {
     path: '',

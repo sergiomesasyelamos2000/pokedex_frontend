@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div class="m-5">
+<!-- <div class="m-5">
   <h1><small>Datos sobre el pokemon</small></h1>
   <hr />
   <div class="d-grid gap-2 d-md-block">
@@ -11,6 +11,7 @@
     <div class="main-section">
       <div class="border-0 modal-content">
         <form [formGroup]="formGroup" (ngSubmit)="updateUser()">
+          <img class="pokemonId" src = "{{user?.img}}" alt="{{user?.name}}">
           <app-input *ngIf="nameInputModel" [inputModel]="nameInputModel" class="row" ngDefaultControl></app-input>
           <app-input *ngIf="typeInputModel" [inputModel]="typeInputModel" class="row" ngDefaultControl></app-input>
           <app-input *ngIf="abilityInputModel" [inputModel]="abilityInputModel" class="row" ngDefaultControl></app-input>
@@ -19,13 +20,58 @@
         <app-input *ngIf="heightInputModel" [inputModel]="heightInputModel" class="row" ngDefaultControl></app-input>
         <app-input *ngIf="descriptionInputModel" [inputModel]="descriptionInputModel" class="row" ngDefaultControl></app-input>
         <app-input *ngIf="imgInputModel" [inputModel]="imgInputModel" class="row" ngDefaultControl></app-input>
-          <!-- <app-input *ngIf="emailInputModel" [inputModel]="emailInputModel" class="row" ngDefaultControl></app-input>
-          <app-input *ngIf="passwordInputModel" [inputModel]="passwordInputModel" class="row" ngDefaultControl>
-          </app-input> -->
           <app-button text="{{ 'button.update_user' | translate }}" [form]="formGroup" type="submit" class="row">
           </app-button>
         </form>
       </div>
     </div>
   </div>
+</div> -->
+<br>
+<div class="m-5">
+<h1 class="animated fadeIn info">{{user?.name | uppercase}} (<small>{{user?.type}}</small>)</h1>
+<hr>
+<div class="row animated fadeIn fast">
+  <div class="col-md-4">
+    <img class="img-fluid" src="{{user?.img}}" alt="{{user?.name}}">
+    <br><br>
+    
+  </div>
+
+  <div class="col-md-8 data">
+    <h3>Nombre: <small>{{user?.name}}</small></h3>
+    
+    <hr>
+    <h3>Tipo:
+    <small>
+      {{user?.type}}
+    </small></h3>
+    <h3>Habilidad: <small>{{user?.ability}}</small>
+    
+  </h3>
+  <h3>Velocidad:
+    <small>
+      {{user?.speed}}
+    </small>
+  </h3>
+  <h3>Peso: 
+    <small>
+      {{user?.weight}}
+    </small>
+  </h3>
+  <h3>Altura:
+    <small>
+      {{user?.height}}
+    </small>
+  </h3>
+  <h3>Descripción: 
+    <small>
+      {{user?.description}}
+    </small>
+  </h3>
+  </div>
+  <div class="m-5 link">
+  <a (click)="goUserList()" class="btn btn-outline-danger btn-block">Regresar</a>
+  </div>
+</div>
 </div>

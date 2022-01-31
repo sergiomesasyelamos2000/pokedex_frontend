@@ -7,10 +7,11 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserRowComponent } from './user-list/user-row/user-row.component';
 import { UserService } from './user.service';
+import { ViewUserComponent } from './view-user/view-user.component';
 
 @NgModule({
   providers: [UserService],
-  declarations: [UserListComponent, UserRowComponent, UserDetailComponent],
+  declarations: [UserListComponent, UserRowComponent, UserDetailComponent, ViewUserComponent],
   exports: [UserListComponent, UserRowComponent],
   imports: [CommonModule, SharedModule, ComponentsModule, MaterialModule],
 })

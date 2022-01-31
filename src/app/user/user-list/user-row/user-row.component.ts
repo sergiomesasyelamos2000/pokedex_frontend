@@ -36,9 +36,14 @@ export class UserRowComponent {
     return this._user;
   }
 
+  public showViewUser(): void {
+    this.showEmmiter.emit(this.user.id);
+  }
+
   public showUserDetail(): void {
     this.showEmmiter.emit(this.user.id);
   }
+
   public deleteUser(): void {
     this.deleteEmmiter.emit(this.user.id);
   }

@@ -58,17 +58,31 @@ a {
   margin-top: 9px;
   padding-left: 1px;
 }
+/*Animaciones*/
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
 
-/* SNACKBAR */
-.warning-snackbar {
-  background: $color-yellow;
-  color: $color-white;
+.fast {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
-.success-snackbar {
-  background: $color-green;
-  color: $color-white;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
-.error-snackbar {
-  background: $color-red;
-  color: $color-white;
+
+.fadeIn {
+  animation-name: fadeIn;
 }

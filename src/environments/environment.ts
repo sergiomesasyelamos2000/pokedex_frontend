@@ -12,6 +12,7 @@ export const environment = {
       users: 'users',
       users_details: 'user/:id',
       sign_up: 'sign-up',
+      viewUser: 'view-user'
     },
     api: {
       base: 'api/v1/',

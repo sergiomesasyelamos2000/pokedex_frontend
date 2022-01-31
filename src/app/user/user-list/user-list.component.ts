@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { GetUserDto } from 'src/app/shared/dtos/user/user-get.dto';
+import { environment } from 'src/environments/environment';
 import { UserService } from '../user.service';
 
 /**
@@ -25,6 +26,19 @@ export class UserListComponent {
   ) {
     this.setUsersList();
   }
+
+
+
+
+   /**
+   * Navigate to component user-detail
+   * @param id User id
+   * @see {@link viewUser.component}
+   */
+    public showViewUser(){
+      this.router.navigate([environment.url.components.viewUser]);
+    }
+
 
   /**
    * Navigate to component user-detail
