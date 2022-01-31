@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
 
-It's a user manager app on you can **Login**, **Update**, **List** and **Delete** users.
+It's a pokedex app on you can **pokedex**, **ViewPokemon**, **List** and **Delete** pokemons.
 
 ## Development server
 
@@ -10,5 +10,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Requirements
 
-- [Backend](https://github.com/sergiomesasyelamos2000/appLogin_backend.git)
+- [Backend](https://github.com/sergiomesasyelamos2000/pokedex_backend.git)
 - MySQL
