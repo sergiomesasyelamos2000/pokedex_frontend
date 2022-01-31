@@ -4,27 +4,27 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError } from 'rxjs';
 import { InputModel } from 'src/app/shared/components/input/model/input.model';
-import { UpdateUserDto } from 'src/app/shared/dtos/user/user-update.dto';
-import { User } from 'src/app/shared/interface/user.model';
+import { UpdatePokemonDto } from 'src/app/shared/dtos/pokemon/pokemon-update.dto';
+import { Pokemon } from 'src/app/shared/interface/user.model';
 import { InputService } from 'src/app/shared/services/input.service';
 import { NotificationsService } from 'src/app/shared/services/notifications.service';
 import { encrypt } from 'src/app/shared/Utils';
 import { environment } from 'src/environments/environment';
-import { UserService } from '../user.service';
+import { PokemonService } from '../pokemon.service';
 
 /**
- * Component to show user selected info and updated
+ * Component to show pokemon selected info and updated
  */
 @Component({
-  selector: 'app-user-detail',
-  templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.scss'],
+  selector: 'app-pokemon-detail',
+  templateUrl: './pokemon-detail.component.html',
+  styleUrls: ['./pokemon-detail.component.scss'],
 })
-export class UserDetailComponent {
-  private userId = 0;
-  private originalUser?: any;
+export class PokemonDetailComponent {
+  private pokemonId = 0;
+  private originalPokemon?: any;
 
-  public user?: User;
+  public pokemon?: Pokemon;
   public formGroup = new FormGroup({});
 
   public emailInputControl?: FormControl;
@@ -51,7 +51,7 @@ export class UserDetailComponent {
   public imgInputModel?: InputModel;
 
   constructor(
-    private readonly userService: UserService<User>,
+    private readonly pokemonService: PokemonService<Pokemon>,
     private readonly inputService: InputService,
     private readonly route: ActivatedRoute,
     private readonly location: Location,
@@ -59,18 +59,18 @@ export class UserDetailComponent {
     private router: Router
   ) {
     this.route.params.subscribe((params) => {
-      this.userId = params['id'];
-      this.userService
-        .findByPropertie(`id:${this.userId}`)
+      this.pokemonId = params['id'];
+      this.pokemonService
+        .findByPropertie(`id:${this.pokemonId}`)
         .pipe(
           catchError((error) => {
             this.location.back();
             throw new Error();
           }),
         )
-        .subscribe((user) => {
-          this.user = user;
-          this.originalUser = user;
+        .subscribe((pokemon) => {
+          this.pokemon = pokemon;
+          this.originalPokemon = pokemon;
           this.buildForm();
         });
     });
@@ -80,18 +80,18 @@ export class UserDetailComponent {
    * Build form and fill it with user data recovered from db
    */
   private buildForm() {
-    this.emailInputControl = new FormControl(this.user?.email, [
+    this.emailInputControl = new FormControl(this.pokemon?.email, [
       Validators.email,
     ]);
     this.passwordInputControl = new FormControl('', []);
-    this.nameInputControl = new FormControl(this.user?.name, []);
-    this.typeInputControl = new FormControl(this.user?.type, []);
-    this.abilityInputControl = new FormControl(this.user?.ability, []);
-    this.speedInputControl = new FormControl(this.user?.speed, []);
-    this.weightInputControl = new FormControl(this.user?.weight, []);
-    this.heightInputControl = new FormControl(this.user?.height, []);
-    this.descriptionInputControl = new FormControl(this.user?.description, []);
-    this.imgInputControl = new FormControl(this.user?.img, []);
+    this.nameInputControl = new FormControl(this.pokemon?.name, []);
+    this.typeInputControl = new FormControl(this.pokemon?.type, []);
+    this.abilityInputControl = new FormControl(this.pokemon?.ability, []);
+    this.speedInputControl = new FormControl(this.pokemon?.speed, []);
+    this.weightInputControl = new FormControl(this.pokemon?.weight, []);
+    this.heightInputControl = new FormControl(this.pokemon?.height, []);
+    this.descriptionInputControl = new FormControl(this.pokemon?.description, []);
+    this.imgInputControl = new FormControl(this.pokemon?.img, []);
 
     this.formGroup = new FormGroup({
       email: this.emailInputControl,
@@ -122,39 +122,39 @@ export class UserDetailComponent {
   /**
    * Update user data in db with data changed in form
    */
-  public updateUser(): void {
-    let updatedUser: any = new UpdateUserDto();
-    updatedUser = { ...updatedUser, ...this.formGroup.getRawValue() };
+  public updatePokemon(): void {
+    let updatedPokemon: any = new UpdatePokemonDto();
+    updatedPokemon = { ...updatedPokemon, ...this.formGroup.getRawValue() };
 
     /**
      * Remove data not changed
      */
-    Object.keys(updatedUser).forEach((propertie) => {
+    Object.keys(updatedPokemon).forEach((propertie) => {
       if (
-        updatedUser[propertie] === this.originalUser[propertie] ||
-        updatedUser[propertie] === ''
+        updatedPokemon[propertie] === this.originalPokemon[propertie] ||
+        updatedPokemon[propertie] === ''
       ) {
-        delete updatedUser[propertie];
+        delete updatedPokemon[propertie];
       }
     });
-    if (updatedUser.password) {
-      updatedUser.password = encrypt(updatedUser.password);
+    if (updatedPokemon.password) {
+      updatedPokemon.password = encrypt(updatedPokemon.password);
     }
 
-    this.userService
-      .update(this.userId, updatedUser)
+    this.pokemonService
+      .update(this.pokemonId, updatedPokemon)
       .subscribe((response) =>
         this.notificationService.showCompossedSuccessNotification(
-          'success.database.generic.user',
+          'success.database.generic.pokemon',
           { action: 'success.database.action.update' },
         ),
       );
   }
 
   /**
-   * Navigate to user-list 
+   * Navigate to pokemon-list 
    */
-   public goUserList(): void {
-    this.router.navigate([environment.url.components.users]);
+   public goPokemonList(): void {
+    this.router.navigate([environment.url.components.pokemons]);
   }
 }

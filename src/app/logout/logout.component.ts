@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 import { AuthService } from '../auth/service/auth.service';
 
 /**
- * Component showed if user logsout or accessToken expires
+ * Component showed if pokemon logsout or accessToken expires
  * @see {@link access-token.dto}
  */
 @Component({

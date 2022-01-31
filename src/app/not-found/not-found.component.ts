@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 /**
- * Default component showed if a user access to a none valid URL
+ * Default component showed if a pokemon access to a none valid URL
  */
 @Component({
   selector: 'app-not-found',

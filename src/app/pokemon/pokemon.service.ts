@@ -4,19 +4,19 @@ import { environment } from '../../environments/environment';
 import { CrudService } from '../shared/services/crud.service';
 
 /**
- * Crud service for all user/ components
+ * Crud service for all Pokemon/ components
  * @see {@link crud.service}
  */
 @Injectable({
   providedIn: 'root',
 })
-export class UserService<User> extends CrudService<User> {
+export class PokemonService<Pokemon> extends CrudService<Pokemon> {
   private enviromentApi: string = environment.environment_api.local;
-  private usersEndpoint: string = environment.url.api.users;
+  private pokemonsEndpoint: string = environment.url.api.pokemons;
 
   constructor(httpClient: HttpClient) {
     super(httpClient);
-    this.setErrorType('error.database.type.user');
-    this.setApiCrudEndpointUrl(this.enviromentApi, this.usersEndpoint);
+    this.setErrorType('error.database.type.pokemon');
+    this.setApiCrudEndpointUrl(this.enviromentApi, this.pokemonsEndpoint);
   }
 }

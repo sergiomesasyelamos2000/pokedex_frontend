@@ -1,8 +1,8 @@
 /**
- * Class for represent data for update user
+ * Class for represent data for update pokemon
  * @class
  */
-export class UpdateUserDto {
+export class UpdatePokemonDto {
   email?: string;
   name?: string;
   password?: string;

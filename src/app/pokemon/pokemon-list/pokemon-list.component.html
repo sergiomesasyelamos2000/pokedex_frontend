@@ -22,23 +22,23 @@
           </tr>
         </thead>
         <tbody text-align="center">
-          <tr *ngFor="let user of usersList; let i = index">
+          <tr *ngFor="let pokemon of pokemonsList; let i = index">
             <!-- <th scope="row">{{i + 1}}</th> -->
-            <!-- <td>{{ user?.img }}</td> -->
+            <!-- <td>{{ pokemon?.img }}</td> -->
             <td>
-              <img class="img-pokemon" src = "{{user?.img}}" alt="{{user?.name}}">
+              <img class="img-pokemon" src = "{{pokemon?.img}}" alt="{{pokemon?.name}}">
             </td>
-            <td>{{ user?.name }}</td>
-            <td>{{ user?.type }}</td>
-            <td>{{ user?.ability }}</td>
-            <td>{{ user?.speed }}</td>
-            <td>{{ user?.weight }}</td>
-            <td>{{ user?.height }}</td>
-            <td>{{ user?.description }}</td>
-            <!-- <td>{{ user?.email }}</td> -->
+            <td>{{ pokemon?.name }}</td>
+            <td>{{ pokemon?.type }}</td>
+            <td>{{ pokemon?.ability }}</td>
+            <td>{{ pokemon?.speed }}</td>
+            <td>{{ pokemon?.weight }}</td>
+            <td>{{ pokemon?.height }}</td>
+            <td>{{ pokemon?.description }}</td>
+            <!-- <td>{{ pokemon?.email }}</td> -->
             <td>
-              <app-user-row [user]="user"  (showEmmiter)="showUserDetail($event)" (deleteEmmiter)="deleteUser($event)">
-              </app-user-row>
+              <app-pokemon-row [pokemon]="pokemon"  (showEmmiter)="showPokemonDetail($event)" (deleteEmmiter)="deletePokemon($event)">
+              </app-pokemon-row>
             </td>
           </tr>
         </tbody>

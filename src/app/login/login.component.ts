@@ -4,14 +4,14 @@ import { Router } from "@angular/router";
 import { environment } from "src/environments/environment";
 import { AuthService } from "../auth/service/auth.service";
 import { InputModel } from "../shared/components/input/model/input.model";
-import { UserLoginDto } from "../shared/dtos/user/user-login.dto";
+import { PokemonLoginDto } from "../shared/dtos/pokemon/pokemon-login.dto";
 import { InputService } from "../shared/services/input.service";
 import { NotificationsService } from "../shared/services/notifications.service";
 import { resetFrom, saveAccessToken } from "../shared/Utils";
 import { LoginService } from "./login.service";
 
 /**
- * Main component on users can try login
+ * Main component on pokemons can try login
  */
 @Component({
   selector: "app-login",
@@ -44,18 +44,18 @@ export class LoginComponent {
   }
 
   /**
-   * Try login a user an if succes saves accessToken into sessionStorage and auth.service
+   * Try login a pokemon an if succes saves accessToken into sessionStorage and auth.service
    * @see {@link auth.service}
    * @see {@link utils} saveAccessToken
    */
   public login(): void {
-    const loginUser: UserLoginDto = { ...this.formGroup.getRawValue() };
-    this.loginService.login(loginUser).subscribe((token) => {
+    const loginPokemon: PokemonLoginDto = { ...this.formGroup.getRawValue() };
+    this.loginService.login(loginPokemon).subscribe((token) => {
       let { accessToken } = token;
       resetFrom(this.formGroup);
       saveAccessToken(accessToken);
       this.authService.accessToken = accessToken;
-      this.router.navigate([environment.url.components.users]);
+      this.router.navigate([environment.url.components.pokemons]);
     });
   }
 

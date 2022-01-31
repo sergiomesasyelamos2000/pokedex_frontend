@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AccessTokenDto } from '../shared/dtos/auth/access-token.dto';
-import { UserLoginDto } from '../shared/dtos/user/user-login.dto';
+import { PokemonLoginDto } from '../shared/dtos/pokemon/pokemon-login.dto';
 import { CrudException } from '../shared/error/type/CrudException';
 
 /**
@@ -20,15 +20,15 @@ export class LoginService {
   constructor(private readonly httpClient: HttpClient) {}
 
   /**
-   * Try login a user with data passed in loginUser
-   * @param {UserLoginDto} loginUser Data to try login a user
+   * Try login a pokemon with data passed in loginPokemon
+   * @param {PokemonLoginDto} loginPokemon Data to try login a pokemon
    * @return {Observable<AccessTokenDto>} Auth Token provided by bakend
-   * @see {@link user-login.dto}
+   * @see {@link pokemon-login.dto}
    * @see {@link access-token.dto}
    */
-  public login(loginUser: UserLoginDto): Observable<AccessTokenDto> {
+  public login(loginPokemon: PokemonLoginDto): Observable<AccessTokenDto> {
     return this.httpClient
-      .post<AccessTokenDto>(this.apiEndpointUrl, loginUser)
+      .post<AccessTokenDto>(this.apiEndpointUrl, loginPokemon)
       .pipe(
         catchError((error) => {
           throw new CrudException(error.status, 'error.login.generic');

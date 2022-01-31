@@ -1,8 +1,8 @@
 /**
- * Interface for classes that represent a user.
+ * Interface for classes that represent a pokemon.
  * @interface
  */
-export interface User {
+export interface Pokemon {
   email: string;
   name: string;
   password: string;

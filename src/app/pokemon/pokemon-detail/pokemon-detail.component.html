@@ -29,49 +29,49 @@
 </div> -->
 <br>
 <div class="m-5">
-<h1 class="animated fadeIn info">{{user?.name | uppercase}} (<small>{{user?.type}}</small>)</h1>
+<h1 class="animated fadeIn info">{{pokemon?.name | uppercase}} (<small>{{pokemon?.type}}</small>)</h1>
 <hr>
 <div class="row animated fadeIn fast">
   <div class="col-md-4">
-    <img class="img-fluid" src="{{user?.img}}" alt="{{user?.name}}">
+    <img class="img-fluid" src="{{pokemon?.img}}" alt="{{pokemon?.name}}">
     <br><br>
     
   </div>
 
   <div class="col-md-8 data">
-    <h3>Nombre: <small>{{user?.name}}</small></h3>
+    <h3>Nombre: <small>{{pokemon?.name}}</small></h3>
     
     <hr>
     <h3>Tipo:
     <small>
-      {{user?.type}}
+      {{pokemon?.type}}
     </small></h3>
-    <h3>Habilidad: <small>{{user?.ability}}</small>
+    <h3>Habilidad: <small>{{pokemon?.ability}}</small>
     
   </h3>
   <h3>Velocidad:
     <small>
-      {{user?.speed}}
+      {{pokemon?.speed}}
     </small>
   </h3>
   <h3>Peso: 
     <small>
-      {{user?.weight}}
+      {{pokemon?.weight}}
     </small>
   </h3>
   <h3>Altura:
     <small>
-      {{user?.height}}
+      {{pokemon?.height}}
     </small>
   </h3>
   <h3>Descripción: 
     <small>
-      {{user?.description}}
+      {{pokemon?.description}}
     </small>
   </h3>
   </div>
   <div class="m-5 link">
-  <a (click)="goUserList()" class="btn btn-outline-danger btn-block">Regresar</a>
+  <a (click)="goPokemonList()" class="btn btn-outline-danger btn-block">Regresar</a>
   </div>
 </div>
 </div>

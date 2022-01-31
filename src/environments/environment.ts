@@ -9,15 +9,14 @@ export const environment = {
       login: 'login',
       logout: 'logout',
       not_found: 'not-found',
-      users: 'users',
-      users_details: 'user/:id',
-      sign_up: 'sign-up',
-      viewUser: 'view-user'
+      pokemons: 'pokemons',
+      pokemons_details: 'pokemon/:id',
+      sign_up: 'sign-up'
     },
     api: {
       base: 'api/v1/',
       login: 'login/',
-      users: 'user/',
+      pokemons: 'pokemon/',
     },
   },
   environment_api: {

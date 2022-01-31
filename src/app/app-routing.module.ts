@@ -6,10 +6,9 @@ import { LoggedGuard } from './auth/guards/logged.guard';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { PokemonDetailComponent } from './pokemon/pokemon-detail/pokemon-detail.component';
+import { PokemonListComponent } from './pokemon/pokemon-list/pokemon-list.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { UserDetailComponent } from './user/user-detail/user-detail.component';
-import { UserListComponent } from './user/user-list/user-list.component';
-import { ViewUserComponent } from './user/view-user/view-user.component';
 
 const routes: Routes = [
   {
@@ -18,8 +17,8 @@ const routes: Routes = [
     canActivate: [LoggedGuard],
   },
   {
-    path: environment.url.components.users,
-    component: UserListComponent,
+    path: environment.url.components.pokemons,
+    component: PokemonListComponent,
     canActivate: [AuthGuard],
   },
   {
@@ -33,13 +32,9 @@ const routes: Routes = [
     canActivate: [LoggedGuard],
   },
   {
-    path: environment.url.components.users_details,
-    component: UserDetailComponent,
+    path: environment.url.components.pokemons_details,
+    component: PokemonDetailComponent,
     canLoad: [AuthGuard],
-  },
-  {
-    path: environment.url.components.viewUser,
-    component: ViewUserComponent
   },
   {
     path: '',

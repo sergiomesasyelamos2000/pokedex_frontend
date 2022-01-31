@@ -127,7 +127,7 @@ export class CrudService<T> implements CrudServiceAbstract<T> {
   /**
    * Sets the api endpoint url
    * @param {string} environmentApiUrl Api base url. Example: 'http://localhost:3000'
-   * @param {string} crudEndopint Api endpoint url. Example: '/user'
+   * @param {string} crudEndopint Api endpoint url. Example: '/pokemon'
    */
   public setApiCrudEndpointUrl(
     environmentApiUrl: string,

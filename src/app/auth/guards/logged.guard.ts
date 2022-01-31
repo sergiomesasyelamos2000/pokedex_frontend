@@ -21,6 +21,6 @@ export class LoggedGuard implements CanActivate {
     | UrlTree
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
-    return !this.authService.userIsLogged();
+    return !this.authService.pokemonIsLogged();
   }
 }

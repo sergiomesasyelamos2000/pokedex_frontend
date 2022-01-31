@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { recoverAccessToken, removeAccessToken } from "../../shared/Utils";
 
 /**
- * Authentication service handles user access token
+ * Authentication service handles pokemon access token
  * @class
  */
 @Injectable()
@@ -34,10 +34,10 @@ export class AuthService {
   }
 
   /**
-   * Verify if user is logged in
+   * Verify if pokemon is logged in
    * @return {boolean} Access Token exists
    */
-  public userIsLogged(): boolean {
+  public pokemonIsLogged(): boolean {
     return this.accessToken !== undefined;
   }
 }

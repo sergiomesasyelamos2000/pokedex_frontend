@@ -16,7 +16,7 @@ enum snackBarClasses {
   providedIn: 'root',
 })
 /**
- * Notify user actions completed or failed with snackbars
+ * Notify pokemon actions completed or failed with snackbars
  * @class
  */
 export class NotificationsService {

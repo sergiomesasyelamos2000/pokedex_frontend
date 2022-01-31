@@ -3,14 +3,14 @@
     "login": "Iniciar sesión",
     "sign_up": "Registrarse",
     "go_to_login": "Volver a Iniciar sesión",
-    "update_user": "Actualizar usuario"
+    "update_pokemon": "Actualizar usuario"
   },
   "error": {
     "database": {
       "generic": "Error al realizar la acción {{action}} para {{type}}",
       "propertie": "Error al realizar la acción {{action}} para {{type}} con {{propertie_name}} {{propertie_value}}",
       "type": {
-        "user": "USER"
+        "pokemon": "POKEMON"
       },
       "action": {
         "create": "CREATE",
@@ -58,7 +58,7 @@
   "success": {
     "database": {
       "generic": {
-        "user": "El usuario ha sido {{action}} con éxito"
+        "pokemon": "El pokemon ha sido {{action}} con éxito"
       },
       "action": {
         "created": "creado",

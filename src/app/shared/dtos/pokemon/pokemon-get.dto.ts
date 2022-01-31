@@ -1,8 +1,8 @@
 /**
- * Class for represent data for get user
+ * Class for represent data for get pokemon
  * @class
  */
-export class GetUserDto {
+export class GetPokemonDto {
   id: string = '';
   email: string = '';
   name: string = '';

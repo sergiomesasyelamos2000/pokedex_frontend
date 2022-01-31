@@ -2,16 +2,16 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { PokemonService } from '../pokemon/pokemon.service';
 import { InputModel } from '../shared/components/input/model/input.model';
-import { CreateUserDto } from '../shared/dtos/user/user-create.dto';
-import { User } from 'src/app/shared/interface/user.model';
+import { CreatePokemonDto } from '../shared/dtos/pokemon/pokemon-create.dto';
+import { Pokemon } from '../shared/interface/user.model';
 import { InputService } from '../shared/services/input.service';
 import { NotificationsService } from '../shared/services/notifications.service';
 import { resetFrom } from '../shared/Utils';
-import { UserService } from '../user/user.service';
 
 /**
- * Allows user registration
+ * Allows pokemon registration
  */
 @Component({
   selector: "app-sign-up",
@@ -68,7 +68,7 @@ export class SignUpComponent {
 
 
   constructor(
-    private readonly userService: UserService<User>,
+    private readonly pokemonService: PokemonService<Pokemon>,
     private readonly notificationService: NotificationsService,
     private readonly inputService: InputService,
     private router: Router
@@ -87,20 +87,20 @@ export class SignUpComponent {
   }
 
   /**
-   * Register user on db with data from form
+   * Register pokemon on db with data from form
    */
   public signUp(): void {
-    let newUser: CreateUserDto = new CreateUserDto();
-    newUser = { ...newUser, ...this.formGroup.getRawValue() };
-    this.userService.create(newUser).subscribe((data) => {
+    let newPokemon: CreatePokemonDto = new CreatePokemonDto();
+    newPokemon = { ...newPokemon, ...this.formGroup.getRawValue() };
+    this.pokemonService.create(newPokemon).subscribe((data) => {
       resetFrom(this.formGroup);
       this.notificationService.showCompossedSuccessNotification(
-        "success.database.generic.user",
+        "success.database.generic.pokemon",
         {
           action: "success.database.action.created",
         }
       );
-      this.router.navigate([environment.url.components.users]);
+      this.router.navigate([environment.url.components.pokemons]);
     });
   }
 
